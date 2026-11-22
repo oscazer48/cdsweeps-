@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CD Sweeps | Garden Clearance and Tidy-Ups in Crawley Down</title>
+<meta name="description" content="CD Sweeps. Local and reliable garden clearance and tidy-up services in Crawley Down, West Sussex and surrounding areas.">
+<style>
+  :root {
+    --black: #0b0b0b;
+    --charcoal: #1a1a1a;
+    --white: #ffffff;
+    --off-white: #f6f4f1;
+    --orange: #ff7a1a;
+    --orange-dark: #e0640a;
+    --grey: #5c5c5c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.6;
+  }
+  img, svg { display: block; max-width: 100%; }
+  a { color: inherit; }
+  .container { width: min(1100px, 92%); margin: 0 auto; }
+
+  /* Header */
+  header {
+    background: var(--black);
+    color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    gap: 16px;
+  }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-mark {
+    width: 44px; height: 44px;
+    border: 2px solid var(--orange);
+    border-radius: 6px;
+    display: grid; place-items: center;
+    font-weight: 900; font-size: 15px; letter-spacing: 1px;
+    color: var(--orange);
+  }
+  .logo-text { font-weight: 800; letter-spacing: 1px; font-size: 16px; }
+  .logo-text span { color: var(--orange); }
+  nav ul { display: flex; gap: 22px; list-style: none; }
+  nav a { text-decoration: none; font-size: 15px; font-weight: 600; }
+  nav a:hover { color: var(--orange); }
+  .btn {
+    display: inline-block;
+    background: var(--orange);
+    color: var(--black);
+    font-weight: 800;
+    text-decoration: none;
+    padding: 14px 26px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s;
+  }
+  .btn:hover { background: var(--orange-dark); }
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+  }
+  .btn-outline:hover { background: var(--white); color: var(--black); }
+  .nav .btn { padding: 10px 18px; font-size: 14px; }
+
+  /* Hero */
+  .hero {
+    background:
+      linear-gradient(120deg, rgba(11,11,11,0.94) 40%, rgba(11,11,11,0.7)),
+      repeating-linear-gradient(45deg, #1f1f1f 0 18px, #181818 18px 36px);
+    color: var(--white);
+    padding: 110px 0 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    right: -60px; bottom: -60px;
+    width: 380px; height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,122,26,0.35), transparent 70%);
+  }
+  .eyebrow {
+    color: var(--orange);
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.05;
+    font-weight: 900;
+    text-transform: uppercase;
+    max-width: 800px;
+    margin-bottom: 22px;
+  }
+  .hero h1 span { color: var(--orange); }
+  .hero p.lead {
+    font-size: clamp(17px, 2vw, 20px);
+    max-width: 580px;
+    color: #d9d9d9;
+    margin-bottom: 34px;
+  }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; position: relative; z-index: 1; }
+  .tagline {
+    margin-top: 40px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #9a9a9a;
+  }
+
+  /* Sections */
+  section { padding: 90px 0; }
+  .section-title {
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+  .section-title span { color: var(--orange); }
+  .section-intro { color: var(--grey); max-width: 640px; margin-bottom: 48px; font-size: 18px; }
+
+  /* Services */
+  .services { background: var(--off-white); }
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+  }
+  .service-card {
+    background: var(--white);
+    border-top: 5px solid var(--orange);
+    padding: 36px 32px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  }
+  .service-icon {
+    width: 56px; height: 56px;
+    margin-bottom: 20px;
+  }
+  .service-card h3 {
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .service-card ul { list-style: none; }
+  .service-card li {
+    padding: 8px 0 8px 26px;
+    position: relative;
+    border-bottom: 1px solid #ececec;
+    color: #333;
+  }
+  .service-card li:last-child { border-bottom: none; }
+  .service-card li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 16px;
+    width: 12px; height: 12px;
+    background: var(--orange);
+    border-radius: 50% 0 50% 0;
+  }
+
+  /* Photos */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin: 56px auto 0;
+    max-width: 760px;
+  }
+  .photo { position: relative; border-bottom: 4px solid var(--orange); background: var(--black); }
+  .photo img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+  .photo figcaption {
+    position: absolute; left: 0; top: 16px;
+    background: var(--orange); color: var(--black);
+    font-weight: 900; text-transform: uppercase; letter-spacing: 2px;
+    font-size: 13px; padding: 6px 14px;
+  }
+
+  /* About */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .about-points { list-style: none; margin-top: 28px; }
+  .about-points li {
+    padding: 14px 0;
+    border-top: 1px solid #e5e5e5;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .about-points li strong { min-width: 150px; }
+  .about-points li span { color: var(--grey); }
+  .about-panel {
+    background: var(--black);
+    color: var(--white);
+    padding: 48px 40px;
+    border-left: 6px solid var(--orange);
+  }
+  .about-panel h3 {
+    font-size: 28px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .about-panel p { color: #d6d6d6; margin-bottom: 14px; }
+  .about-panel .big-leaf { width: 90px; margin-bottom: 20px; }
+
+  /* Area */
+  .area { background: var(--black); color: var(--white); }
+  .area .section-intro { color: #bdbdbd; }
+  .area-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+  }
+  .area-box {
+    border: 2px solid var(--orange);
+    padding: 40px;
+    text-align: center;
+  }
+  .area-box .place {
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+  .area-box p { color: #d6d6d6; margin-top: 10px; }
+
+  /* Contact */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+  }
+  .contact-details { list-style: none; margin-top: 26px; }
+  .contact-details li {
+    padding: 18px 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .contact-details strong {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--orange-dark);
+    margin-bottom: 4px;
+  }
+  .contact-details .pending { color: var(--grey); font-style: italic; }
+  form.quote {
+    background: var(--off-white);
+    padding: 40px;
+    border-top: 5px solid var(--orange);
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .field { margin-bottom: 16px; display: flex; flex-direction: column; }
+  .field.full { grid-column: 1 / -1; }
+  .field label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .field input, .field select, .field textarea {
+    font: inherit;
+    padding: 13px 14px;
+    border: 1px solid #cfcfcf;
+    background: var(--white);
+    border-radius: 3px;
+  }
+  .field textarea { min-height: 120px; resize: vertical; }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    outline: 3px solid var(--orange);
+    outline-offset: 0;
+    border-color: var(--orange);
+  }
+  form.quote .btn { width: 100%; text-align: center; }
+  .previews { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .previews img { width: 72px; height: 72px; object-fit: cover; border: 2px solid var(--orange); }
+  .form-note { margin-top: 14px; font-size: 14px; color: var(--grey); min-height: 1.4em; }
+
+  /* Footer */
+  footer {
+    background: var(--black);
+    color: #9a9a9a;
+    padding: 40px 0;
+    font-size: 14px;
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  footer .logo-text { color: var(--white); }
+
+  /* Mobile */
+  @media (max-width: 860px) {
+    nav ul { display: none; }
+    .about-grid, .area-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    section { padding: 70px 0; }
+    .hero { padding: 80px 0 70px; }
+  }
+  @media (max-width: 520px) {
+    .form-row { grid-template-columns: 1fr; }
+    .nav .btn { padding: 9px 12px; font-size: 13px; }
+    .logo-text { font-size: 14px; }
+    .hero-actions .btn { width: 100%; text-align: center; }
+    form.quote { padding: 26px 20px; }
+    .service-card { padding: 28px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="logo" aria-label="CD Sweeps home">
+      <div class="logo-mark">CD</div>
+      <div class="logo-text">CD <span>SWEEPS</span></div>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#area">Area</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#quote" class="btn">Get a Quote</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="padding: 110px 0 100px;">
+    <div class="container">
+      <p class="eyebrow">Crawley Down, West Sussex</p>
+      <h1>You sleep while <span>we sweep.</span></h1>
+      <p class="lead">Local and reliable garden clearance and tidy-up services in Crawley Down and surrounding areas.</p>
+      <div class="hero-actions">
+        <a href="#quote" class="btn">Get a Quote</a>
+        <a href="#services" class="btn btn-outline">View Services</a>
+      </div>
+      <p class="tagline">Local &amp; Reliable</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2 class="section-title">Our <span>services</span></h2>
+      <p class="section-intro">Two straightforward services to help keep your outdoor space clear, neat and looking its best.</p>
+
+      <div class="service-grid">
+        <article class="service-card">
+          <svg class="service-icon" viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M10 46 C10 20, 34 8, 54 10 C54 34, 40 54, 10 46 Z" fill="#ff7a1a"/>
+            <path d="M10 46 L38 22" stroke="#0b0b0b" stroke-width="3" fill="none"/>
+          </svg>
+          <h3>Leaf Clearance</h3>
+          <ul>
+            <li>Clearing fallen leaves</li>
+            <li>Tidying outdoor areas</li>
+            <li>Helping keep gardens neat</li>
+          </ul>
+        </article>
+
+        <article class="service-card">
+          <svg class="service-icon" viewBox="0 0 64 64" aria-hidden="true">
+            <rect x="8" y="14" width="48" height="8" fill="#0b0b0b"/>
+            <rect x="12" y="26" width="40" height="6" fill="#ff7a1a"/>
+            <rect x="16" y="36" width="32" height="6" fill="#0b0b0b"/>
+            <rect x="20" y="46" width="24" height="6" fill="#ff7a1a"/>
+          </svg>
+          <h3>Garden Tidy Ups</h3>
+          <ul>
+            <li>General outdoor tidying</li>
+            <li>Clearing garden debris</li>
+            <li>Improving the appearance of outdoor spaces</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="gallery" aria-label="Before and after leaf clearance">
+        <figure class="photo"><img src="before.jpg" alt="Pavement and front lawn covered in fallen autumn leaves" loading="lazy"><figcaption>Before</figcaption></figure>
+        <figure class="photo"><img src="after.jpg" alt="The same pavement and lawn cleared, with the leaves bagged up" loading="lazy"><figcaption>After</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container about-grid">
+      <div>
+        <h2 class="section-title">About <span>CD Sweeps</span></h2>
+        <p class="section-intro" style="margin-bottom: 0;">
+          CD Sweeps is a local garden clearance and tidy-up service focused on providing reliable, straightforward help.
+          We are teenagers from Crawley Down: young, hardworking and trying to earn some pocket money by helping local gardens look their best.</p>
+        <ul class="about-points">
+          <li><strong>Young &amp; hardworking</strong> <span>Teenagers who put in the effort and take pride in the job.</span></li>
+          <li><strong>Local</strong> <span>Based in Crawley Down and serving the surrounding area.</span></li>
+          <li><strong>Reliable</strong> <span>Clear, dependable service you can count on.</span></li>
+          <li><strong>Straightforward</strong> <span>No fuss. Tell us what you need and we get it done.</span></li>
+        </ul>
+      </div>
+      <div class="about-panel">
+        <svg class="big-leaf" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M10 46 C10 20, 34 8, 54 10 C54 34, 40 54, 10 46 Z" fill="#ff7a1a"/>
+          <path d="M10 46 L38 22" stroke="#0b0b0b" stroke-width="3" fill="none"/>
+        </svg>
+        <h3>Local &amp; Reliable</h3>
+        <p>Garden clearance and tidy-ups for homes in Crawley Down and nearby.</p>
+        <p>Ask us for a quote and we will get back to you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA -->
+  <section class="area" id="area">
+    <div class="container area-grid">
+      <div>
+        <h2 class="section-title">Our <span>area</span></h2>
+        <p class="section-intro">We are based in Crawley Down, West Sussex, and work in the surrounding areas.</p>
+      </div>
+      <div class="area-box">
+        <p class="place">Crawley Down</p>
+        <p>West Sussex, UK</p>
+        <p>and surrounding areas</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT + QUOTE -->
+  <section id="contact">
+    <div class="container contact-grid">
+      <div id="quote-info">
+        <h2 class="section-title">Get in <span>touch</span></h2>
+        <p class="section-intro" style="margin-bottom: 0;">Send us a few details and we will come back to you with a quote.</p>
+        <ul class="contact-details">
+          <li>
+            <strong>Phone</strong>
+            <a href="tel:+447746859758" style="font-weight:700; text-decoration:none;">07746 859758</a>
+          </li>
+          <li>
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/447746859758" style="font-weight:700; text-decoration:none;">Message us on WhatsApp (07746 859758)</a>
+          </li>
+          <li>
+            <strong>Email</strong>
+            <a href="mailto:oscar.zerhouni@gmail.com" style="font-weight:700; text-decoration:none;">oscar.zerhouni@gmail.com</a>
+          </li>
+          <li>
+            <strong>Service area</strong>
+            Crawley Down, West Sussex and surrounding areas
+          </li>
+        </ul>
+      </div>
+
+      <form class="quote" id="quote" novalidate>
+        <h3 style="font-size: 24px; font-weight: 900; text-transform: uppercase; margin-bottom: 22px;">Request a quote</h3>
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+          </div>
+          <div class="field full">
+            <label for="service">Service</label>
+            <select id="service" name="service" required>
+              <option value="">Please choose</option>
+              <option>Leaf Clearance</option>
+              <option>Garden Tidy Up</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="address">Address or postcode</label>
+            <input type="text" id="address" name="address" autocomplete="street-address">
+          </div>
+          <div class="field full">
+            <label for="message">Tell us about your garden</label>
+            <textarea id="message" name="message"></textarea>
+          </div>
+          <div class="field full">
+            <label for="photos">Add photos of your garden (optional)</label>
+            <input type="file" id="photos" name="photos" accept="image/*" multiple>
+            <div class="previews" id="previews"></div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Send Quote Request</button>
+        <p class="form-note" id="form-note" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="logo">
+      <div class="logo-mark">CD</div>
+      <div class="logo-text">CD <span style="color: var(--orange);">SWEEPS</span></div>
+    </div>
+    <p>Local &amp; Reliable. Crawley Down, West Sussex.</p>
+    <p>&copy; <span id="year"></span> CD Sweeps. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  document.getElementById("photos").addEventListener("change", function (e) {
+    const box = document.getElementById("previews");
+    box.innerHTML = "";
+    Array.from(e.target.files).slice(0, 6).forEach(function (f) {
+      const img = document.createElement("img");
+      img.alt = "Selected photo";
+      img.src = URL.createObjectURL(f);
+      box.appendChild(img);
+    });
+  });
+
+  // The quote form is not connected to any inbox yet.
+  // Do not treat submissions as received until a real form backend is added.
+  document.getElementById("quote").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const note = document.getElementById("form-note");
+    note.textContent = "Online quote requests are not switched on yet. Please check back soon.";
+  });
+</script>
+
+</body>
+</html>
