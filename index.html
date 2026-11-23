@@ -522,12 +522,13 @@
             <textarea id="message" name="message"></textarea>
           </div>
           <div class="field full">
-            <label for="photos">Add photos of your garden (optional)</label>
-            <input type="file" id="photos" name="photos" accept="image/*" multiple>
+            <label>Photos of your garden</label>
+            <p class="form-note">After you press the button, WhatsApp opens. You can send your photos in the chat.</p>
+            <input type="file" id="photos" name="photos" accept="image/*" multiple style="display:none">
             <div class="previews" id="previews"></div>
           </div>
         </div>
-        <button type="submit" class="btn">Send Quote Request</button>
+        <button type="submit" class="btn">Send on WhatsApp</button>
         <p class="form-note" id="form-note" role="status"></p>
       </form>
     </div>
@@ -560,12 +561,23 @@
     });
   });
 
-  // The quote form is not connected to any inbox yet.
-  // Do not treat submissions as received until a real form backend is added.
+  // Opens WhatsApp with the details typed in. Nothing is sent until the person presses send in WhatsApp.
   document.getElementById("quote").addEventListener("submit", function (e) {
     e.preventDefault();
+    const v = function (id) { return document.getElementById(id).value.trim(); };
     const note = document.getElementById("form-note");
-    note.textContent = "Online quote requests are not switched on yet. Please check back soon.";
+    if (!v("name") || !v("phone") || !v("service")) {
+      note.textContent = "Please add your name, phone number and the service you need.";
+      return;
+    }
+    const text = "Hi CD Sweeps, I'd like a quote.\n" +
+      "Name: " + v("name") + "\n" +
+      "Phone: " + v("phone") + "\n" +
+      "Service: " + v("service") + "\n" +
+      "Address: " + (v("address") || "-") + "\n" +
+      "About my garden: " + (v("message") || "-");
+    note.textContent = "Opening WhatsApp. Press send there to finish.";
+    window.open("https://wa.me/447746859758?text=" + encodeURIComponent(text), "_blank");
   });
 </script>
 
